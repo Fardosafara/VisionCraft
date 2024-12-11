@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Project Scope Questionnaire</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2a4365;
+            --background-color: #f7fafc;
+            --text-color: #000000;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .success-message {
+            background-color: #48bb78;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .radio-group {
+            display: grid;
+            gap: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .radio-option input[type="checkbox"] {
+    margin-right: 8px; /* Adds space between the checkbox and the label */
+}
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Website Project Scope Questionnaire</h1>
+        <p>Request for Information to Define the Scope of Your Website Project</p>
+        <p>Dear Client,</p>
+        <p>
+            I'm Eng.Fardosa Gedi, I hope you're doing well! To ensure I provide you with an accurate flat fee for the website project, I'd like to gather some important details. 
+            Please take a few moments to answer the questions below. Your responses will help me understand your needs, preferences, and expectations for 
+            the website, so I can deliver a product that meets your vision.
+        </p>
+        <form id="scopeForm">
+            <div>
+                <label for="clientName">Your Name:</label>
+                <input type="text" id="clientName" name="clientName" required alt="e.g., John Doe">
+            </div>
+
+            <div>
+                <label for="clientEmail">Your Email:</label>
+                <input type="email" id="clientEmail" name="clientEmail" required alt="e.g., johndoe@example.com">
+            </div>
+
+            <h2>General Information and Purpose of the Website</h2>
+            <div class="radio-group">
+                <label>What is the main goal of the website?</label>
+                <div class="radio-option">
+                    <input type="radio" id="goal1" name="websiteGoal" value="booking" required>
+                    <label for="goal1"> Booking appointments</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="goal2" name="websiteGoal" value="showcasing">
+                    <label for="goal2"> Showcasing services</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="goal3" name="websiteGoal" value="ecommerce">
+                    <label for="goal3"> E-commerce / Online store</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="goal4" name="websiteGoal" value="other">
+                    <label for="goal4">Other (please specify)</label>
+                </div>
+            </div>
+
+            <div id="otherGoalContainer" style="display: none;">
+                <label for="otherGoal">Please specify the main goal:</label>
+                <input type="text" id="otherGoal" name="otherGoal" alt="e.g., Lead generation, Information sharing">
+            </div>
+
+            <div class="radio-group">
+                <label>What are the key features you would like to have on the website?</label>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature1" name="keyFeatures" value="home">
+                    <label for="feature1"> Home</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature2" name="keyFeatures" value="about">
+                    <label for="feature2"> About</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature3" name="keyFeatures" value="services">
+                    <label for="feature3"> Services</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature4" name="keyFeatures" value="contact-us">
+                    <label for="feature4"> Contact Us</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature5" name="keyFeatures" value="testimonials">
+                    <label for="feature5"> Testimonials</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature6" name="keyFeatures" value="portfolio">
+                    <label for="feature6"> Portfolio</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature7" name="keyFeatures" value="booking">
+                    <label for="feature7"> Booking system</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature8" name="keyFeatures" value="contact">
+                    <label for="feature8"> Contact forms</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature9" name="keyFeatures" value="gallery">
+                    <label for="feature9"> Gallery</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="feature10" name="keyFeatures" value="other">
+                    <label for="feature10"> Other (please specify)</label>
+                </div>
+            </div>
+            
+            <div id="otherFeaturesContainer" style="display: none;">
+                <label for="otherFeatures">Please specify other key features:</label>
+                <input type="text" id="otherFeatures" name="otherFeatures" alt="e.g., Blog, Customer reviews, Live chat">
+            </div>
+
+            <div>
+                <label for="targetAudience">Target Audience:</label>
+                <input type="text" id="targetAudience" name="targetAudience" required alt="e.g., Small business owners, Millennials interested in fitness">
+            </div>
+
+            <h2>Design and Layout</h2>
+            <div class="radio-group">
+                <label>Do you have a design preference or brand guidelines?</label>
+                <div class="radio-option">
+                    <input type="radio" id="design1" name="designPreference" value="custom" required>
+                    <label for="design1">Custom design (based on brand guidelines)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="design2" name="designPreference" value="creative">
+                    <label for="design2">No I don't have a design preference</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="numberOfPages">Number of Pages:</label>
+                <input type="number" id="numberOfPages" name="numberOfPages" required alt="e.g., 5, 10, 20">
+            </div>
+
+            <div class="radio-group">
+                <label>Do you want any specific interactive features on the site?</label>
+                <div class="radio-option">
+                    <input type="checkbox" id="interactive1" name="interactiveFeatures" value="animations">
+                    <label for="interactive1">Animations</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="interactive2" name="interactiveFeatures" value="hover">
+                    <label for="interactive2">Hover effects</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" id="interactive3" name="interactiveFeatures" value="other">
+                    <label for="interactive3">Other (please specify)</label>
+                </div>
+            </div>
+
+            <div id="otherInteractiveContainer" style="display: none;">
+                <label for="otherInteractive">Please specify other interactive features:</label>
+                <input type="text" id="otherInteractive" name="otherInteractive" alt="e.g., Parallax scrolling, Interactive maps">
+            </div>
+
+
+            <div>
+                <label for="bookingSystem">Booking System Description (if applicable):</label>
+                <textarea id="bookingSystem" name="bookingSystem" placeholder="e.g., Allow customers to book appointments for services, include calendar integration"></textarea>
+            </div>
+
+            <div>
+                <label for="seoOptimization">SEO Optimization:</label>
+                <select id="seoOptimization" name="seoOptimization" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="budget">Budget:</label>
+                <input type="text" id="budget" name="budget" required alt="e.g., $5,000 - $10,000">
+            </div>
+
+            <div>
+                <label for="timeline">Desired Timeline:</label>
+                <input type="text" id="timeline" name="timeline" required alt="e.g., 3weeks, 1 months, 2 months, By end of week">
+            </div>
+
+            <div>
+                <label for="additionalFeatures">Additional Features:</label>
+                <textarea id="additionalFeatures" name="additionalFeatures" placeholder="e.g., Blog, Newsletter signup, Member login area, Product comparison tool"></textarea>
+            </div>
+
+            <h2>Backend and Functional Features</h2>
+            <div>
+                <label for="authentication">Do you need user authentication (e.g., registration, login, profiles)?</label>
+                <select id="authentication" name="authentication" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="databaseRequirement">Will the website require a database?</label>
+                <select id="databaseRequirement" name="databaseRequirement" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <h2>Content and Media</h2>
+            <div>
+                <label for="contentProvider">Who will provide the website content (e.g., text, images, videos)?</label>
+                <textarea id="contentProvider" name="contentProvider" required placeholder="e.g., Our marketing team will provide all videos and images, We need help with content creation"></textarea>
+            </div>
+
+            <div>
+                <label for="contentHelp">Do you need help with content creation?</label>
+                <select id="contentHelp" name="contentHelp" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <h2>Additional Features</h2>
+            <div>
+                <label for="contactForm">Do you need a contact or inquiry form?</label>
+                <select id="contactForm" name="contactForm" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="socialMediaIntegration">Do you want social media integration (e.g., Instagram feed, share buttons)?</label>
+                <select id="socialMediaIntegration" name="socialMediaIntegration" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <h2>Business Goals</h2>
+            <div>
+                <label for="primaryGoal">What is the primary goal of the website?</label>
+                <input type="text" id="primaryGoal" name="primaryGoal" required alt="e.g., Increase sales, Generate leads, Build brand awareness">
+            </div>
+            <div>
+                <label for="biggestProblem">What is the biggest problem this website will solve for your business?</label>
+                <textarea id="biggestProblem" name="biggestProblem" required placeholder="e.g., Streamline our booking process, Online services, Showcase our portfolio to potential clients"></textarea>
+            </div>
+            <div>
+                <label for="usp">What is your unique selling point (USP) or value proposition?</label>
+                <textarea id="usp" name="usp" required placeholder="e.g., 24/7 customer support, Eco-friendly products, 30 years of industry experience"></textarea>
+            </div>
+
+            <h2>Audience Insights</h2>
+            <div>
+                <label for="visitorActions">What actions should visitors take on your website?</label>
+                <textarea id="visitorActions" name="visitorActions" required placeholder="e.g., Make a purchase, Book an appointments, Sign up for a newsletter, Request a quote"></textarea>
+            </div>
+            <div>
+                <label for="customerInfo">Do you have detailed information about your ideal customer?</label>
+                <textarea id="customerInfo" name="customerInfo" required placeholder="e.g., Age 3-35, urban professionals, interested in fitness and wellness"></textarea>
+            </div>
+
+            <h2>Branding and Design</h2>
+            <div>
+                <label for="existingBranding">Do you already have existing branding materials?</label>
+                <textarea id="existingBranding" name="existingBranding" required placeholder="e.g., We have a logo, color scheme, and brand guidelines; We need help developing our brand identity"></textarea>
+            </div>
+            <div>
+                <label for="websiteEmotion">What emotions or message should the website communicate?</label>
+                <input type="text" id="websiteEmotion" name="websiteEmotion" required alt="e.g., Professionalism, Trust, Innovation, Fun">
+            </div>
+            <div>
+                <label for="customGraphics">Do you need custom graphics, icons, or illustrations?</label>
+                <select id="customGraphics" name="customGraphics" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <h2>Content Strategy</h2>
+            <div>
+                <label for="contentUpdateFrequency">How often will the content on the website be updated?</label>
+                <select id="contentUpdateFrequency" name="contentUpdateFrequency" required>
+                    <option value="">Select an option</option>
+                    <option value="weekly">Monthly</option>
+                    <option value="monthly">Yearly</option>
+                    <option value="rarely">Rarely</option>
+                </select>
+            </div>
+            <div>
+                <label for="siteStructureHelp">Do you need help organizing the site's structure (e.g., menus and navigation)?</label>
+                <select id="siteStructureHelp" name="siteStructureHelp" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="seoOptimization">Do you require SEO optimization for your content?</label>
+                <select id="seoOptimization" name="seoOptimization" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <h2>Technical Features</h2>
+            <div>
+                <label for="deviceOptimization">What devices should the website be optimized for?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="deviceOptimization" value="desktop"> Desktop</label>
+                    <label><input type="checkbox" name="deviceOptimization" value="tablet"> Tablet</label>
+                    <label><input type="checkbox" name="deviceOptimization" value="mobile"> Mobile</label>
+                </div>
+            </div>
+           
+            <div>
+                <label for="technologies">Are there specific technologies or platforms you'd like the site to be built on?</label>
+                <textarea id="technologies" name="technologies" required placeholder="e.g., Javascript, React, Nextjs, Tailwind css, Python, Custom development"></textarea>
+            </div>
+
+            <h2>User Experience (UX)</h2>
+            <div>
+                <label for="userJourney">What kind of user journey do you envision?</label>
+                <textarea id="userJourney" name="userJourney" required placeholder="e.g., Homepage → Product Page → Checkout → Confirmation"></textarea>
+            </div>
+            <div>
+                <label for="essentialFeatures">Are there any features or tools that are essential to the user experience?</label>
+                <textarea id="essentialFeatures" name="essentialFeatures" required placeholder="e.g., Live chat, Search functionality, Downloadable resources"></textarea>
+            </div>
+
+            <h2>Competitor Analysis</h2>
+            <div>
+                <label for="competitors">Who are your main competitors, and what do you like/dislike about their websites?</label>
+                <textarea id="competitors" name="competitors" required placeholder="e.g., Competitor A: like their clean design, dislike slow loading times; Competitor B: like their product showcase, dislike confusing navigation"></textarea>
+            </div>
+            <div>
+                <label for="competitorFeatures">What features on competitor websites do you want to incorporate or avoid?</label>
+                <textarea id="competitorFeatures" name="competitorFeatures" required placeholder="e.g., Incorporate: 360-degree product views, customer reviews; Avoid: Pop-up ads, cluttered layouts"></textarea>
+            </div>
+
+            <h2>Project Logistics</h2>
+            <div>
+                <label for="communicationMethod">Do you have a preferred method of communication during the project?</label>
+                <textarea id="communicationMethod" name="communicationMethod" required placeholder="e.g., Email, Zoom, or WhatsApp"></textarea>
+            </div>
+            <div>
+                <label for="projectPriorities">What are your top three priorities for this project?</label>
+                <textarea id="projectPriorities" name="projectPriorities" required placeholder="e.g., 1. Speed of delivery, 2. Design quality, 3. Cost-effectiveness"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            Thank you for submitting your questionnaire. I'll get back to you soon!
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h2>Why These Questions Matter:</h2>
+            <p>By getting answers to these questions, I will be able to:</p>
+            <ul>
+                <li><strong>Define the Scope:</strong> Understanding exactly what you want which will allow me to clarify what will and won't be included in the project.</li>
+                <li><strong>Estimate Time and Resources:</strong> These questions help me gauge how much time and effort will go into each feature, which will inform your pricing.</li>
+                <li><strong>Manage Client Expectations:</strong> By having a clear understanding of the requirements and expectations upfront, I can prevent scope creep and ensure I am delivering what the client wants.</li>
+            </ul>
+            <p>
+                Once I've gathered this information, I'll be in a better position to offer a <strong>flat fee</strong> that reflects the complexity of the project, 
+                the features required, and the time I'll spend developing the site.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('scopeForm');
+            const successMessage = document.getElementById('successMessage');
+            const websiteGoalRadios = document.getElementsByName('websiteGoal');
+            const otherGoalContainer = document.getElementById('otherGoalContainer');
+            const keyFeaturesCheckboxes = document.getElementsByName('keyFeatures');
+            const otherFeaturesContainer = document.getElementById('otherFeaturesContainer');
+            const interactiveFeaturesCheckboxes = document.getElementsByName('interactiveFeatures');
+            const otherInteractiveContainer = document.getElementById('otherInteractiveContainer');
+
+            // Show/hide "Other" input for website goal
+            websiteGoalRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    otherGoalContainer.style.display = this.value === 'other' ? 'block' : 'none';
+                });
+            });
+
+            // Show/hide "Other" input for key features
+            keyFeaturesCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    otherFeaturesContainer.style.display = 
+                        Array.from(keyFeaturesCheckboxes).some(cb => cb.value === 'other' && cb.checked) ? 'block' : 'none';
+                });
+            });
+
+            // Show/hide "Other" input for interactive features
+            interactiveFeaturesCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    otherInteractiveContainer.style.display = 
+                        Array.from(interactiveFeaturesCheckboxes).some(cb => cb.value === 'other' && cb.checked) ? 'block' : 'none';
+                });
+            });
+
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                if (form.checkValidity()) {
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+
+                    try {
+                        const response = await fetch('http://localhost:5500/send-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+
+                        if (response.ok) {
+                            form.style.display = 'none';
+                            successMessage.style.display = 'block';
+                        } else {
+                            const errorText = await response.text();
+                            alert(`Failed to submit the form. Server response: ${errorText}`);
+                        }
+                    } catch (error) {
+                        console.error('Error submitting the form:', error);
+                        alert('An error occurred. Please try again.');
+                    }
+                } else {
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
