@@ -127,15 +127,17 @@
 }
 
         .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
             gap: 10px;
         }
 
-        .checkbox-group label {
+        .checkbox-option {
             display: flex;
             align-items: center;
-            gap: 5px;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 10px;
         }
 
         @media (max-width: 600px) {
@@ -159,7 +161,7 @@
         <p>Request for Information to Define the Scope of Your Website Project</p>
         <p>Dear Client,</p>
         <p>
-            I'm Eng.Fardosa Gedi, I hope you're doing well! To ensure I provide you with an accurate flat fee for the website project, I'd like to gather some important details. 
+            I'm Eng Fardosa Gedi, I hope you're doing well! To ensure I provide you with an accurate flat fee for the website project, I'd like to gather some important details. 
             Please take a few moments to answer the questions below. Your responses will help me understand your needs, preferences, and expectations for 
             the website, so I can deliver a product that meets your vision.
         </p>
