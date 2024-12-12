@@ -1,14 +1,27 @@
 # Node modules
 /node_modules/
 
-
 # Environment files (to keep sensitive information secure)
 .env
 
+# Log files
+*.log
 
-# Other sensitive files
-*.env*
+# Operating system files
+.DS_Store
+Thumbs.db
 
 # IDE or editor settings
 .vscode/
 .idea/
+
+# Build output
+/dist/
+/build/
+
+# Package lock files (optional, depending on your project setup)
+package-lock.json
+
+
+# Other sensitive files
+*.env*
